@@ -2,7 +2,6 @@ package course
 
 import (
 	"context"
-	"log"
 	"strings"
 )
 
@@ -24,7 +23,6 @@ func (s *Service) RecordAttempt(ctx context.Context, attempt Attempt) error {
 	}
 	// TODO(candidate 1): Store the accepted attempt using s.repo. Support multiple attempts.
 	if err := s.repo.Add(ctx, attempt); err != nil {
-		log.Println(err)
 		return err
 	}
 	return nil
